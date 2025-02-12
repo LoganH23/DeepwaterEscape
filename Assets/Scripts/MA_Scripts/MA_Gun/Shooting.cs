@@ -6,14 +6,14 @@ public class Shooting : MonoBehaviour
 {
     public Transform BulletSpawn;
     public GameObject BulletPrefab;
-    public float bulletSpeed = 10;
+    public float bulletSpeed = 20;
     public float shootingDelay = 2f; // delay when firing
     private bool canShoot = true;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C) && canShoot)
+        if (Input.GetMouseButton(0) && canShoot)
         {
             Shoot();
         }
