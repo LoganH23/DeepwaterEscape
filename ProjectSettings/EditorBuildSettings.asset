@@ -9,8 +9,28 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene_SubIntro.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/Scene_SubTimeout.unity
     guid: 7183327f3a46726468befb7ceb18c2ba
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}
+=======
+    path: Assets/UI/Scenes/Main.unity
+    guid: c6a9ed91cd76f094ba58771d7d2ec964
+  - enabled: 1
+    path: Assets/UI/Scenes/Howto.unity
+    guid: ec6f44e714601bb4ea8dcf5cce3f4e04
+  - enabled: 1
+    path: Assets/UI/Scenes/Level.unity
+    guid: b5617b4beb586464e90094fc5371a5c7
+  - enabled: 1
+    path: Assets/UI/Scenes/Win.unity
+    guid: 2ff45e5528c21204c9d0239963f06db7
+  - enabled: 1
+    path: Assets/UI/Scenes/Lose.unity
+    guid: d09c9758dc9913e42965cb7fe7ea8015
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
+      type: 2}
+>>>>>>> main
