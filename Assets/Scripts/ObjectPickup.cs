@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
  * This script handles object collection. It is attached to an object
@@ -23,6 +24,28 @@ public class ObjectPickup : MonoBehaviour
     {
         if(promptOn == true && Input.GetKeyDown(KeyCode.E))
         {
+            //check if level 1
+            if(SceneManager.GetActiveScene().name == "1.Submarine")
+            {
+                //set items in level manager
+
+                GameObject levelManager = GameObject.Find("LevelManager");
+
+                if(!levelManager.GetComponent<LevelOneManager>().getItem1())
+                {
+                    levelManager.GetComponent<LevelOneManager>().setItem1();
+                }
+                else if(!levelManager.GetComponent<LevelOneManager>().getItem2())
+                {
+                    levelManager.GetComponent<LevelOneManager>().setItem2();
+                }
+                else if(!levelManager.GetComponent<LevelOneManager>().getItem3())
+                {
+                    levelManager.GetComponent<LevelOneManager>().setItem3();
+                }
+                
+            }
+
             promptOn = false;
             pickupPrompt.SetActive(false);
             Destroy(this.gameObject);
@@ -44,5 +67,6 @@ public class ObjectPickup : MonoBehaviour
             pickupPrompt.SetActive(false);
             promptOn = false;
         }
+
     }
 }
