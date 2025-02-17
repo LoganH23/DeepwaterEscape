@@ -8,6 +8,10 @@ public class LevelOneManager : MonoBehaviour
     [SerializeField] private bool item2PickedUp;
     [SerializeField] private bool item3PickedUp;
 
+    [SerializeField] private GameObject item1;
+    [SerializeField] private GameObject item2;
+    [SerializeField] private GameObject item3;
+
     [SerializeField] private GameObject playerGun;
 
     private void Awake()
@@ -15,6 +19,17 @@ public class LevelOneManager : MonoBehaviour
         item1PickedUp = false;
         item2PickedUp = false;
         item3PickedUp = false;
+
+        item1.SetActive(false);
+        item2.SetActive(false);
+        item3.SetActive(false);
+    }
+
+    public void turnOnObjects()
+    {
+        item1.SetActive(true);
+        item2.SetActive(true);
+        item3.SetActive(true);
     }
 
     // Update is called once per frame
