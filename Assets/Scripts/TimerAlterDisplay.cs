@@ -15,7 +15,7 @@ public class TimerAlterDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timerRunning = true;
+        timerRunning = false;
         curTimeRemaining = timeLimit;
     }
     // Update is called once per frame

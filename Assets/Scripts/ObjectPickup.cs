@@ -31,17 +31,25 @@ public class ObjectPickup : MonoBehaviour
 
                 GameObject levelManager = GameObject.Find("LevelManager");
 
-                if(!levelManager.GetComponent<LevelOneManager>().getItem1())
+                if (this.gameObject.name == "Button")
                 {
-                    levelManager.GetComponent<LevelOneManager>().setItem1();
+                    levelManager.GetComponent<TimerAlterDisplay>().timerRunning = true;
+                    levelManager.GetComponent<LevelOneManager>().turnOnObjects();
                 }
-                else if(!levelManager.GetComponent<LevelOneManager>().getItem2())
+                else
                 {
-                    levelManager.GetComponent<LevelOneManager>().setItem2();
-                }
-                else if(!levelManager.GetComponent<LevelOneManager>().getItem3())
-                {
-                    levelManager.GetComponent<LevelOneManager>().setItem3();
+                    if (!levelManager.GetComponent<LevelOneManager>().getItem1())
+                    {
+                        levelManager.GetComponent<LevelOneManager>().setItem1();
+                    }
+                    else if (!levelManager.GetComponent<LevelOneManager>().getItem2())
+                    {
+                        levelManager.GetComponent<LevelOneManager>().setItem2();
+                    }
+                    else if (!levelManager.GetComponent<LevelOneManager>().getItem3())
+                    {
+                        levelManager.GetComponent<LevelOneManager>().setItem3();
+                    }
                 }
                 
             }
