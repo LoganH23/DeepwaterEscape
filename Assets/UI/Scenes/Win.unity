@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 642737448}
   - component: {fileID: 642737451}
   - component: {fileID: 642737450}
+  - component: {fileID: 642737452}
   m_Layer: 5
   m_Name: WL Screen
   m_TagString: Untagged
@@ -279,6 +280,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28ff0c666b58a67428be47e19eb25808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &642737452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642737447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89bd94309826d524a9a7e9ae00ab6e92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1153207365
