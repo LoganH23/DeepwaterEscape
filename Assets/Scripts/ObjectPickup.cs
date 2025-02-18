@@ -13,6 +13,7 @@ public class ObjectPickup : MonoBehaviour
 {
     [SerializeField] private GameObject pickupPrompt;
     private bool promptOn;
+    public AudioSource pickUp;
 
     private void Awake()
     {
@@ -38,6 +39,7 @@ public class ObjectPickup : MonoBehaviour
                 }
                 else
                 {
+                    pickUp.Play();
                     if (!levelManager.GetComponent<LevelOneManager>().getItem1())
                     {
                         levelManager.GetComponent<LevelOneManager>().setItem1();
@@ -54,9 +56,11 @@ public class ObjectPickup : MonoBehaviour
                 
             }
 
+            
             promptOn = false;
             pickupPrompt.SetActive(false);
-            Destroy(this.gameObject);
+            GetComponent<Renderer>().enabled = false;
+            Destroy(this.gameObject, 1);
         }
     }
 

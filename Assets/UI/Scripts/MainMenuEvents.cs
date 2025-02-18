@@ -15,6 +15,7 @@ public class MainMenuEvents : MonoBehaviour
 
     private void Awake()
     {
+        UnityEngine.Cursor.lockState = CursorLockMode.None;
         _audioSource = GetComponent<AudioSource>();
         _document = GetComponent<UIDocument>();
 
