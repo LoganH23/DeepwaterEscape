@@ -12,7 +12,7 @@ public class TimerAlterDisplay : MonoBehaviour
     [Tooltip("When is the timer going to end?")]
     public float endTime = 0f;
     public bool timerRunning = false; // Is the timer actually ticking? Must be triggered from an object.
-    private bool isVisible = true; // Unused as of now.
+    // private bool isVisible = true; // Unused as of now.
     public TextMeshProUGUI timerText; // The textmeshpro object that will hold the timer text
 
     // Start is called before the first frame update
