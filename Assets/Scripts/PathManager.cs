@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * This script manages the paths used for the bite attack in the Arena boss
+ * fight. It uses a coroutine to actively switch between paths, randomly moving
+ * from the enemy's normal circling to one of the two bite paths. After a bite
+ * path is completed, the enemy returns to its circling path
+*/
 public class PathManager : MonoBehaviour
 {
     [SerializeField] GameObject path1;
@@ -14,17 +20,15 @@ public class PathManager : MonoBehaviour
         StartCoroutine(switchPaths());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
+    //coroutine to cycle between paths
     IEnumerator switchPaths()
     {
         while(true)
         {
             yield return new WaitForSeconds(1);
+
+            //if a charge node is hit, randomly decide to charge or continue
             if(path1.GetComponent<FollowPath>().getNode().isChargeNode)
             {
                 int randPath = Random.Range(1, 3);
@@ -33,6 +37,9 @@ public class PathManager : MonoBehaviour
                 {
                     continue;
                 }
+                //if charging, set charge path active, follow it, then
+                //reset the charge path and update the original path node to
+                //the charge end node
                 else
                 {
                     path1.SetActive(false);
@@ -59,32 +66,6 @@ public class PathManager : MonoBehaviour
 
             }
            
-            /*int randPath = Random.Range(1, 4);
-
-            yield return new WaitForSeconds(Random.Range(5, 10));
-            path1.SetActive(false);
-            if(randPath == 1)
-            {
-                path1.SetActive(true);
-            }
-            else if(randPath == 2)
-            {
-                path2.SetActive(true);
-            }
-            else if(randPath == 3)
-            {
-                path3.SetActive(true);
-            }
-            yield return new WaitForSeconds(3);
-            path1.SetActive(true);
-            if (randPath == 2)
-            {
-                path2.SetActive(false);
-            }
-            else if (randPath == 3)
-            {
-                path3.SetActive(false);
-            }*/
         }
     }
 }

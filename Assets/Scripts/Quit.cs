@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+ * This script exits the game is the escape key is pressed
+*/
 public class Quit : MonoBehaviour
 {
     // Start is called before the first frame update
