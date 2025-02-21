@@ -108,12 +108,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: lethalforce
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 1969895749
   material: {fileID: -5567688385884620091}
-  materialHashCode: 0
+  materialHashCode: 1253646149
   m_Version: 1.1.0
   m_SourceFontFileGUID: 4d9d948cf0b815d4cbae6917d1ad3eb7
-  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 4d9d948cf0b815d4cbae6917d1ad3eb7, type: 3}
+  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 4d9d948cf0b815d4cbae6917d1ad3eb7,
+    type: 3}
   m_SourceFontFile: {fileID: 0}
   m_AtlasPopulationMode: 0
   m_FaceInfo:
