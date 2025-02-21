@@ -17,6 +17,7 @@ public class LevelOneManager : MonoBehaviour
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         item1PickedUp = false;
         item2PickedUp = false;
         item3PickedUp = false;
