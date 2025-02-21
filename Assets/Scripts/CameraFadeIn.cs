@@ -2,8 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * This script provides a visual effect to have the camera fade in from black.
+ * It uses an animation curve to gradually transfer from a black texture to
+ * the game world.
+*/
 public class CameraFadeIn : MonoBehaviour
 {
+    //variables
     public bool fadein = true;
 
     public float speedScale = 1f;
@@ -17,6 +23,7 @@ public class CameraFadeIn : MonoBehaviour
     private int direction = 0;
     private float time = 0f;
 
+    //begin fade in on start
     private void Start()
     {
         if (fadein == false)
@@ -38,6 +45,7 @@ public class CameraFadeIn : MonoBehaviour
         texture.Apply();
     }
 
+    //check to see if fully faded in
     private void Update()
     {
         if (direction == 0 && fadein)
@@ -50,21 +58,9 @@ public class CameraFadeIn : MonoBehaviour
             direction = 1;
 
         }
-        /*else if(SceneManager.GetActiveScene().name == "UnderwaterScene")
-        {
-            alpha = 1f;
-            time = 0f;
-            direction = 1;
-        }*/
-        /*else
-        {
-            if (alpha >= 1f) //Fully faded out
-            {
-                GameObject.Find("SceneManager").GetComponent<LoadNextScene>().LoadScene(1);
-            }
-        }*/
     }
 
+    //draws texture to the screen
     public void OnGUI()
     {
         if (alpha > 0f)

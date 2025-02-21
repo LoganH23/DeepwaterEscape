@@ -2,8 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * This script manages in-game events that occur in level 1. Specifically,
+ * It keeps track of (a) If the 'begin' button has been pressed, which starts
+ * the timer, and (b) if the items in the environment have been collected. Once
+ * all items in the environment are collected, it actives the gun the player
+ * uses to escape
+*/
 public class LevelOneManager : MonoBehaviour
 {
+    //variables
     [SerializeField] private bool item1PickedUp;
     [SerializeField] private bool item2PickedUp;
     [SerializeField] private bool item3PickedUp;
@@ -14,6 +22,7 @@ public class LevelOneManager : MonoBehaviour
 
     [SerializeField] private GameObject playerGun;
 
+    //set default level conditions
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -27,6 +36,7 @@ public class LevelOneManager : MonoBehaviour
         item3.SetActive(false);
     }
 
+    //activate objects when button is pressed
     public void turnOnObjects()
     {
         item1.SetActive(true);
@@ -34,7 +44,7 @@ public class LevelOneManager : MonoBehaviour
         item3.SetActive(true);
     }
 
-    // Update is called once per frame
+    // Check to see if all items are collected
     void Update()
     {
         if(item1PickedUp && item2PickedUp && item3PickedUp)
@@ -42,6 +52,8 @@ public class LevelOneManager : MonoBehaviour
             playerGun.SetActive(true);
         }
     }
+
+    //setters and getters for each item
 
     public void setItem1()
     {

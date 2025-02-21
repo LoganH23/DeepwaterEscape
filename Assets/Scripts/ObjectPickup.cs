@@ -11,10 +11,12 @@ using UnityEngine.SceneManagement;
 */
 public class ObjectPickup : MonoBehaviour
 {
+    //variables
     [SerializeField] private GameObject pickupPrompt;
     private bool promptOn;
     public AudioSource pickUp;
 
+    //initially set prompt to false
     private void Awake()
     {
         pickupPrompt.SetActive(false);
@@ -64,6 +66,7 @@ public class ObjectPickup : MonoBehaviour
         }
     }
 
+    //activates prompt on entry
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
@@ -72,6 +75,7 @@ public class ObjectPickup : MonoBehaviour
             promptOn = true;
         }
     }
+    //closes prompt on exit
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")

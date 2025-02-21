@@ -4,6 +4,10 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+/*
+ * This script handles the countdown timer used in level 1. It tracks the time
+ * remaining and displays it to the UI.
+*/
 public class TimerAlterDisplay : MonoBehaviour
 {
     [Tooltip("Time limit in seconds.")]
