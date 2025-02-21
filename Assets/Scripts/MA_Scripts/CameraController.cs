@@ -1,75 +1,82 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
-/*
-    This file has a commented version with details about how each line works. 
-    The commented version contains code that is easier and simpler to read. This file is minified.
-*/
-
-/// <summary>
-/// Camera movement script for third person games.
-/// This Script should not be applied to the camera! It is attached to an empty object and inside
-/// it (as a child object) should be your game's MainCamera.
-/// </summary>
 public class CameraController : MonoBehaviour
 {
+    // This is the movement of the camera
+    public float sensitivity = 5f; // how fast the camera move
+    public float smoothCam = 10f; // make the camera movement smooth
+    public float lookUpMax = 60f; // the max of the camera angle of the angle
+    public float lookUpMin = -60f; // the min of the camera angle of the angle
 
-    [Tooltip("Enable to move the camera by holding the right mouse button. Does not work with joysticks.")]
+    public float maxCameraDistance = 5f; // Maximum distance of the camera from the player
+    public float minCameraDistance = 1f; // Minimum distance of the camera to avoid clipping
+    public LayerMask collisionLayer; // Layers that will block the camera
+
+    // what the screen is click it move the camera 
     public bool clickToMoveCamera = false;
-    [Tooltip("Enable zoom in/out when scrolling the mouse wheel. Does not work with joysticks.")]
-    public bool canZoom = true;
-    [Space]
-    [Tooltip("The higher it is, the faster the camera moves. It is recommended to increase this value for games that uses joystick.")]
-    public float sensitivity = 5f;
 
-    [Tooltip("Camera Y rotation limits. The X axis is the maximum it can go up and the Y axis is the maximum it can go down.")]
-    public Vector2 cameraLimit = new Vector2(-45, 40);
+    private float mouseX; // Horizontal camera rotation
+    private float mouseY; // Vertical camera rotation
+    private Quaternion camRotation; // Rotation of the camera
+    private Transform player; // Reference to the player's transform
+    private Vector3 defaultCamOffset; // Default offset position of the camera
+    private Vector3 currentCamOffset; // Adjusted camera offset after collision detection
+    private Transform t_cam; // The actual camera transform
 
-    float mouseX;
-    float mouseY;
-    float offsetDistanceY;
-
-    Transform player;
-
-    void Start()
+    private void Start()
     {
-
         player = GameObject.FindWithTag("Player").transform;
-        offsetDistanceY = transform.position.y;
 
-        // Lock and hide cursor with option isn't checked
-        if ( ! clickToMoveCamera )
+        // main camera move go to t_camera
+        t_cam = Camera.main.transform;
+
+        defaultCamOffset = t_cam.localPosition;
+        currentCamOffset = defaultCamOffset;
+        camRotation = transform.localRotation;
+
+        if (!clickToMoveCamera)
         {
-            UnityEngine.Cursor.lockState = CursorLockMode.Locked;
-            UnityEngine.Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
 
     }
 
-
-    void Update()
+    private void Update()
     {
+        if (clickToMoveCamera && Input.GetAxisRaw("Fire2") == 0)
+        {
+            return;
+        }
 
-        // Follow player - camera offset
-        transform.position = player.position + new Vector3(0, offsetDistanceY, 0);
-
-        // Set camera zoom when mouse wheel is scrolled
-        if( canZoom && Input.GetAxis("Mouse ScrollWheel") != 0 )
-            Camera.main.fieldOfView -= Input.GetAxis("Mouse ScrollWheel") * sensitivity * 2;
-        // You can use Mathf.Clamp to set limits on the field of view
-
-        // Checker for right click to move camera
-        if ( clickToMoveCamera )
-            if (Input.GetAxisRaw("Fire2") == 0)
-                return;
-            
-        // Calculate new position
         mouseX += Input.GetAxis("Mouse X") * sensitivity;
-        mouseY += Input.GetAxis("Mouse Y") * sensitivity;
-        // Apply camera limts
-        mouseY = Mathf.Clamp(mouseY, cameraLimit.x, cameraLimit.y);
+        mouseY -= Input.GetAxis("Mouse Y") * sensitivity;
 
-        transform.rotation = Quaternion.Euler(-mouseY, mouseX, 0);
+        mouseY = Mathf.Clamp(mouseY, lookUpMin, lookUpMax);
+
+        // Update rotation based on mouse input
+        transform.localRotation = Quaternion.Euler(mouseY, mouseX, 0);
+
+        // camera collision detection
+        Vector3 desiredCameraPosition = transform.position + transform.rotation * defaultCamOffset;
+        RaycastHit hit;
+
+        if (Physics.Linecast(transform.position, desiredCameraPosition, out hit, collisionLayer))
+        {
+            // Move camera closer if there's an obstacle
+            currentCamOffset = Vector3.ClampMagnitude(defaultCamOffset, hit.distance - 0.2f); // Small offset to avoid clipping
+        }
+        else
+        {
+            // if no obstacle the camera will return back to normal 
+            currentCamOffset = Vector3.Lerp(currentCamOffset, defaultCamOffset, Time.deltaTime * smoothCam);
+        }
+
+        // Apply the updated camera position and collision
+        t_cam.localPosition = Vector3.Lerp(t_cam.localPosition, currentCamOffset, Time.deltaTime * smoothCam);
+
+        // Keep the camera parent following the player
+        transform.position = player.position;
 
     }
 }
