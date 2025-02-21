@@ -169,6 +169,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &79233603
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -287,6 +290,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &149730689
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -405,6 +411,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &206172493
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -506,7 +515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 462857802}
-  moveSpeed: 1
+  moveSpeed: 2
 --- !u!4 &296645865
 Transform:
   m_ObjectHideFlags: 0
@@ -575,6 +584,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &309914402
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -693,6 +705,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &311906469
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -811,6 +826,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &333059463
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1094,6 +1112,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &426507765
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1284,7 +1305,7 @@ GameObject:
   - component: {fileID: 474156112}
   - component: {fileID: 474156111}
   m_Layer: 0
-  m_Name: Node (16)
+  m_Name: ChargeNode2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1317,6 +1338,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 1
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &474156112
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1435,6 +1459,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &588602715
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1520,7 +1547,7 @@ GameObject:
   - component: {fileID: 664487216}
   - component: {fileID: 664487215}
   m_Layer: 0
-  m_Name: Node (6)
+  m_Name: ChargeEndNode2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1553,6 +1580,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 1
+  NodeIndex: 0
 --- !u!135 &664487216
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1840,6 +1870,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &791660473
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1958,6 +1991,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &813495845
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2076,6 +2112,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &868642335
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2194,6 +2233,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &957225880
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2382,6 +2424,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &1029067865
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2467,7 +2512,7 @@ GameObject:
   - component: {fileID: 1078836020}
   - component: {fileID: 1078836019}
   m_Layer: 0
-  m_Name: Node (21)
+  m_Name: ChargeEndNode1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2500,6 +2545,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 1
+  NodeIndex: 0
 --- !u!135 &1078836020
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2618,6 +2666,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &1097578350
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2736,6 +2787,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &1133625060
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2854,6 +2908,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &1209221758
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2972,6 +3029,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &1248318553
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3090,6 +3150,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &1296341944
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3314,6 +3377,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &1350324682
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3432,6 +3498,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &1391187530
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3550,6 +3619,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &1392158735
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3736,6 +3808,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &1423930624
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3854,6 +3929,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &1554484284
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3972,6 +4050,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 1
+  NodeIndex: 0
 --- !u!135 &1561714130
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4090,6 +4171,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &1619717445
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4208,6 +4292,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &1630040542
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4309,7 +4396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 462857802}
-  moveSpeed: 1
+  moveSpeed: 2
 --- !u!4 &1657348739
 Transform:
   m_ObjectHideFlags: 0
@@ -4378,6 +4465,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &1760739066
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4496,6 +4586,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &1802537493
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4581,7 +4674,7 @@ GameObject:
   - component: {fileID: 1899094837}
   - component: {fileID: 1899094836}
   m_Layer: 0
-  m_Name: Node (11)
+  m_Name: ChargeNode1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4614,6 +4707,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 1
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &1899094837
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4732,6 +4828,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &1935350286
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4850,6 +4949,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &1972900633
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4968,6 +5070,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &1983781301
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5086,6 +5191,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cd36d17b834a16a374de8eb297480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChargeNode: 0
+  isChargeEndNode: 0
+  NodeIndex: 0
 --- !u!135 &2136112818
 SphereCollider:
   m_ObjectHideFlags: 0

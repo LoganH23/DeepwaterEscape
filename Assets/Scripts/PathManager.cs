@@ -24,7 +24,42 @@ public class PathManager : MonoBehaviour
     {
         while(true)
         {
-            int randPath = Random.Range(1, 4);
+            yield return new WaitForSeconds(1);
+            if(path1.GetComponent<FollowPath>().getNode().isChargeNode)
+            {
+                int randPath = Random.Range(1, 3);
+
+                if(randPath == 1)
+                {
+                    continue;
+                }
+                else
+                {
+                    path1.SetActive(false);
+                
+                    if(path1.GetComponent<FollowPath>().getNode().gameObject.name == "ChargeNode1")
+                    {
+                        path3.SetActive(true);
+                        yield return new WaitForSeconds(2.5f);
+                        path3.GetComponent<FollowPath>().resetNode();
+                        path3.SetActive(false);
+                        path1.SetActive(true);
+                        path1.GetComponent<FollowPath>().setCurrentNode(3);
+                    }
+                    else if(path1.GetComponent<FollowPath>().getNode().gameObject.name == "ChargeNode2")
+                    {
+                        path2.SetActive(true);
+                        yield return new WaitForSeconds(2.5f);
+                        path2.GetComponent<FollowPath>().resetNode();
+                        path2.SetActive(false);
+                        path1.SetActive(true);
+                        path1.GetComponent<FollowPath>().setCurrentNode(2);
+                    }
+                }
+
+            }
+           
+            /*int randPath = Random.Range(1, 4);
 
             yield return new WaitForSeconds(Random.Range(5, 10));
             path1.SetActive(false);
@@ -49,7 +84,7 @@ public class PathManager : MonoBehaviour
             else if (randPath == 3)
             {
                 path3.SetActive(false);
-            }
+            }*/
         }
     }
 }
