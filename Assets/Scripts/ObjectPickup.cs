@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
  * This script handles object collection. It is attached to an object
@@ -10,9 +11,12 @@ using UnityEngine;
 */
 public class ObjectPickup : MonoBehaviour
 {
+    //variables
     [SerializeField] private GameObject pickupPrompt;
     private bool promptOn;
+    public AudioSource pickUp;
 
+    //initially set prompt to false
     private void Awake()
     {
         pickupPrompt.SetActive(false);
@@ -23,12 +27,46 @@ public class ObjectPickup : MonoBehaviour
     {
         if(promptOn == true && Input.GetKeyDown(KeyCode.E))
         {
+            //check if level 1
+            if(SceneManager.GetActiveScene().name == "1.Submarine")
+            {
+                //set items in level manager
+
+                GameObject levelManager = GameObject.Find("LevelManager");
+
+                if (this.gameObject.name == "Button")
+                {
+                    levelManager.GetComponent<TimerAlterDisplay>().timerRunning = true;
+                    levelManager.GetComponent<LevelOneManager>().turnOnObjects();
+                }
+                else
+                {
+                    pickUp.Play();
+                    if (!levelManager.GetComponent<LevelOneManager>().getItem1())
+                    {
+                        levelManager.GetComponent<LevelOneManager>().setItem1();
+                    }
+                    else if (!levelManager.GetComponent<LevelOneManager>().getItem2())
+                    {
+                        levelManager.GetComponent<LevelOneManager>().setItem2();
+                    }
+                    else if (!levelManager.GetComponent<LevelOneManager>().getItem3())
+                    {
+                        levelManager.GetComponent<LevelOneManager>().setItem3();
+                    }
+                }
+                
+            }
+
+            
             promptOn = false;
             pickupPrompt.SetActive(false);
-            Destroy(this.gameObject);
+            GetComponent<Renderer>().enabled = false;
+            Destroy(this.gameObject, 1);
         }
     }
 
+    //activates prompt on entry
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
@@ -37,6 +75,7 @@ public class ObjectPickup : MonoBehaviour
             promptOn = true;
         }
     }
+    //closes prompt on exit
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -44,5 +83,6 @@ public class ObjectPickup : MonoBehaviour
             pickupPrompt.SetActive(false);
             promptOn = false;
         }
+
     }
 }

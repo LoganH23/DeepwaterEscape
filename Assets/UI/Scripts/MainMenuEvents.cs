@@ -15,6 +15,8 @@ public class MainMenuEvents : MonoBehaviour
 
     private void Awake()
     {
+        UnityEngine.Cursor.lockState = CursorLockMode.None;
+        UnityEngine.Cursor.visible = true;
         _audioSource = GetComponent<AudioSource>();
         _document = GetComponent<UIDocument>();
 
@@ -94,7 +96,7 @@ public class MainMenuEvents : MonoBehaviour
     {
         _audioSource.Play();
         yield return new WaitForSeconds(_audioSource.clip.length); // Wait for the sound to finish
-        SceneManager.LoadScene("Level"); // Load the "Main" scene after the sound finishes
+        SceneManager.LoadScene("1.Submarine"); // Load the "Main" scene after the sound finishes
     }
 
     private IEnumerator PlayHowto()
