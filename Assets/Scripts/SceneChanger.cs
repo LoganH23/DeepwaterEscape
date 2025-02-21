@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+ * This script can be called to change between scenes
+*/
 public class SceneChanger : MonoBehaviour
 {
     public void ChangeTheScene(string sceneName)
