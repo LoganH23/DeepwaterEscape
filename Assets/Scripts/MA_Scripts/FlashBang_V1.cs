@@ -131,7 +131,7 @@ public class FlashBang_V1 : MonoBehaviour
         whiteImage.color = new Color(1, 1, 1, 1);
 
         float fadeDuration = 15f; // Total duration of the fade
-        float fadeStep = 0.00025f; // the fade step by step (it take make the screen visiable)
+        float fadeStep = 0.0025f; // the fade step by step (it take make the screen visiable)
         float waitTime = fadeDuration * fadeStep;
 
         while (whiteImage.color.a > 0)
