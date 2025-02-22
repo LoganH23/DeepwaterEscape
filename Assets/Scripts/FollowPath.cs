@@ -67,7 +67,6 @@ public class FollowPath : MonoBehaviour
     // Lerp the enemy between nodes
     void Update()
     {
-        Debug.Log(currentNode);
         timer += Time.deltaTime * moveSpeed;
         if (enemy.transform.position != currentPositionHolder)
         {
