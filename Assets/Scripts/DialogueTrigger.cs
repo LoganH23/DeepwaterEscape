@@ -23,10 +23,8 @@ public class DialogueTrigger : MonoBehaviour
     private void Awake()
     {
         playerInRange = false;
-        visualCue.SetActive(false);
+        visualCue.SetActive(true);
 
-        //placeholder code
-        startDialogue();
     }
 
     //checks if the player is in range and dialogue hasn't started yet
@@ -35,7 +33,7 @@ public class DialogueTrigger : MonoBehaviour
         if(playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
             visualCue.SetActive(true);
-            if(Input.GetKeyDown(KeyCode.Space))
+            if(Input.GetKeyDown(KeyCode.F))
             {
                 DialogueManager.GetInstance().EnterDialogueMode(inkJson);
             }
@@ -46,29 +44,19 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
-    //placeholder - starts dialogue
-    public void startDialogue()
-    {
-        playerInRange = true;
-    }
-
-
     //scripts to activate/deactivate prompt for dialogue 
-    /*
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             playerInRange = true;
         }
     }
-
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit(Collider other)
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             playerInRange = false;
         }
     }
-    */
 }

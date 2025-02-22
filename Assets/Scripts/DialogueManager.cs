@@ -55,7 +55,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             ContinueStory();
         }
@@ -74,8 +74,10 @@ public class DialogueManager : MonoBehaviour
     //exits the dialogue queue
     private void ExitDialogueMode()
     {
-        dialogueIsPlaying = false;
+        Debug.Log("Running");
+
         dialoguePanel.SetActive(false);
+        dialogueIsPlaying = false;
         dialogueText.text = "";
         dialogueComplete = true;
     }
