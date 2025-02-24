@@ -4,10 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-/*
- * This script checks the visibility of the cursor and sets it appropriately
- * for the given scene
-*/
 public class SetCursorVisibility : MonoBehaviour
 {
     [Tooltip("Is the cursor visible?")]
