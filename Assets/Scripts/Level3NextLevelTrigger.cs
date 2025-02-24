@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Level2NextLevelTrigger : MonoBehaviour
+public class Level3NextLevelTrigger : MonoBehaviour
 {
     [SerializeField] GameObject mainCamera;
 
@@ -11,8 +11,6 @@ public class Level2NextLevelTrigger : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            Debug.Log("Collided!");
-
             StartCoroutine(fadeToNextScene());
         }
     }
@@ -21,6 +19,6 @@ public class Level2NextLevelTrigger : MonoBehaviour
     {
         mainCamera.GetComponent<CameraFadeOut>().fadeOut = true;
         yield return new WaitForSeconds(6);
-        SceneManager.LoadScene("Scene_OnRails");
+        SceneManager.LoadScene("3.Arena");
     }
 }
