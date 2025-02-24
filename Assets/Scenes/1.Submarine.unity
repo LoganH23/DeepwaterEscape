@@ -2979,13 +2979,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2472949899913092539, guid: f680b11ba37d4493f8915401935cc0b1,
         type: 3}
+      propertyPath: Gravity
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2472949899913092539, guid: f680b11ba37d4493f8915401935cc0b1,
+        type: 3}
       propertyPath: MoveSpeed
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2472949899913092539, guid: f680b11ba37d4493f8915401935cc0b1,
         type: 3}
+      propertyPath: JumpHeight
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2472949899913092539, guid: f680b11ba37d4493f8915401935cc0b1,
+        type: 3}
       propertyPath: RotationSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2472949899913092539, guid: f680b11ba37d4493f8915401935cc0b1,
+        type: 3}
+      propertyPath: GroundedRadius
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2961818760708097798, guid: f680b11ba37d4493f8915401935cc0b1,
         type: 3}
