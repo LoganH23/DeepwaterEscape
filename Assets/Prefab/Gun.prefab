@@ -155,5 +155,5 @@ MonoBehaviour:
   BulletSpawn: {fileID: 4063937737383475113}
   BulletPrefab: {fileID: 5770109008186170006, guid: f9eeea8ad9f3c420fb3d19a847073bae,
     type: 3}
-  bulletSpeed: 80
+  bulletSpeed: 1200
   shootingDelay: 2
