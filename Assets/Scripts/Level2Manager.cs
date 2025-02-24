@@ -16,17 +16,12 @@ public class Level2Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameObject.Find("DialogueManager").GetComponent<DialogueManager>().dialogueComplete)
+        /*if(GameObject.Find("DialogueManager").GetComponent<DialogueManager>().dialogueComplete)
         {
             GameObject.Find("DialogueManager").GetComponent<DialogueManager>().dialogueComplete = false;
             StartCoroutine(fadeToNextScene());
-        }
+        }*/
     }
 
-    IEnumerator fadeToNextScene()
-    {
-        mainCamera.GetComponent<CameraFadeOut>().fadeOut = true;
-        yield return new WaitForSeconds(6);
-        SceneManager.LoadScene("3.Arena");
-    }
+    
 }
