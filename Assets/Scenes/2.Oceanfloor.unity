@@ -3870,10 +3870,35 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1488863679801619958, guid: 1154d70de24dd4b04b39f4f2de0ea738,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488863679801619958, guid: 1154d70de24dd4b04b39f4f2de0ea738,
+        type: 3}
+      propertyPath: m_MinMoveDistance
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236573561010161826, guid: 1154d70de24dd4b04b39f4f2de0ea738,
+        type: 3}
+      propertyPath: gravity
+      value: 9.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236573561010161826, guid: 1154d70de24dd4b04b39f4f2de0ea738,
+        type: 3}
+      propertyPath: jumpTime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4236573561010161826, guid: 1154d70de24dd4b04b39f4f2de0ea738,
         type: 3}
       propertyPath: velocity
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236573561010161826, guid: 1154d70de24dd4b04b39f4f2de0ea738,
+        type: 3}
+      propertyPath: jumpForce
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5520190316959483118, guid: 1154d70de24dd4b04b39f4f2de0ea738,
         type: 3}
