@@ -492,7 +492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29ca37889fd674212862998349ed919c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 878232407}
+  mainCamera: {fileID: 0}
 --- !u!4 &237703813
 Transform:
   m_ObjectHideFlags: 0
@@ -2242,7 +2242,7 @@ PrefabInstance:
     - target: {fileID: 4504772651233487798, guid: 0090731b51e488b43a6a7307adf4cfef,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -136.06
       objectReference: {fileID: 0}
     - target: {fileID: 4504772651233487798, guid: 0090731b51e488b43a6a7307adf4cfef,
         type: 3}
@@ -2278,6 +2278,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504772651233487798, guid: 0090731b51e488b43a6a7307adf4cfef,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7947543393155850538, guid: 0090731b51e488b43a6a7307adf4cfef, type: 3}
