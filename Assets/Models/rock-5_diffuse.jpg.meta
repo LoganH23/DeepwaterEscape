@@ -6,8 +6,13 @@ TextureImporter:
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
+<<<<<<< HEAD:Assets/Models/rock-5_diffuse.jpg.meta
     enableMipMap: 1
     sRGBTexture: 1
+=======
+    enableMipMap: 0
+    sRGBTexture: 0
+>>>>>>> fccda4f219f44b43e24aab81f7b47ee657105a6a:Assets/UI/Cursor/normal-sci-fi.png.meta
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -71,8 +76,8 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
+    textureFormat: 4
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -84,7 +89,7 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 12
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
