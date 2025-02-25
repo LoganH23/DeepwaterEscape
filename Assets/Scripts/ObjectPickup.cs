@@ -11,13 +11,18 @@ using UnityEngine.SceneManagement;
 */
 public class ObjectPickup : MonoBehaviour
 {
+    //variables
     [SerializeField] private GameObject pickupPrompt;
     private bool promptOn;
+    public AudioSource pickUp;
+    public GameObject alarm;
 
+    //initially set prompt to false
     private void Awake()
     {
         pickupPrompt.SetActive(false);
         promptOn = false;
+        alarm.SetActive(false);
     }
 
     private void Update()
@@ -33,11 +38,13 @@ public class ObjectPickup : MonoBehaviour
 
                 if (this.gameObject.name == "Button")
                 {
+                    alarm.SetActive(true);
                     levelManager.GetComponent<TimerAlterDisplay>().timerRunning = true;
                     levelManager.GetComponent<LevelOneManager>().turnOnObjects();
                 }
                 else
                 {
+                    pickUp.Play();
                     if (!levelManager.GetComponent<LevelOneManager>().getItem1())
                     {
                         levelManager.GetComponent<LevelOneManager>().setItem1();
@@ -54,12 +61,15 @@ public class ObjectPickup : MonoBehaviour
                 
             }
 
+            
             promptOn = false;
             pickupPrompt.SetActive(false);
-            Destroy(this.gameObject);
+            GetComponent<Renderer>().enabled = false;
+            Destroy(this.gameObject, 1);
         }
     }
 
+    //activates prompt on entry
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
@@ -68,6 +78,7 @@ public class ObjectPickup : MonoBehaviour
             promptOn = true;
         }
     }
+    //closes prompt on exit
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")

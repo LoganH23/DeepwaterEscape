@@ -300,6 +300,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9080791664315093029, guid: 432858f7b28f64eb7ae2415851b89861,
+        type: 3}
+      propertyPath: bulletSpeed
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 9216086892188203716, guid: 432858f7b28f64eb7ae2415851b89861,
         type: 3}
       propertyPath: m_IsTrigger
@@ -752,7 +757,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &42321210
@@ -12812,7 +12817,9 @@ Transform:
   m_LocalPosition: {x: 2091.8455, y: -38.372322, z: 1770.0415}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 284107800}
+  - {fileID: 1213222174}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1647020766
@@ -13481,6 +13488,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slider_1 (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 8826760244605866395, guid: 678c67b6156b843efb2704e675313777,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826760244605866395, guid: 678c67b6156b843efb2704e675313777,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 193c709ec19075145866a3d9c1e4c23c, type: 3}
+    - target: {fileID: 8826760244605866395, guid: 678c67b6156b843efb2704e675313777,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -1972087937450937482, guid: 585e8ff32307d4142835ad2612b261fb,
+        type: 2}
+    - target: {fileID: 8826760244605866395, guid: 678c67b6156b843efb2704e675313777,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938589041068221524, guid: 678c67b6156b843efb2704e675313777,
+        type: 3}
+      propertyPath: alarm
+      value: 
+      objectReference: {fileID: 253298982}
+    - target: {fileID: 8938589041068221524, guid: 678c67b6156b843efb2704e675313777,
+        type: 3}
+      propertyPath: pickupPrompt
+      value: 
+      objectReference: {fileID: 42321207}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13812,6 +13850,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knob_1 (35)
       objectReference: {fileID: 0}
+    - target: {fileID: 8826760244605866395, guid: 678c67b6156b843efb2704e675313777,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826760244605866395, guid: 678c67b6156b843efb2704e675313777,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 193c709ec19075145866a3d9c1e4c23c, type: 3}
+    - target: {fileID: 8826760244605866395, guid: 678c67b6156b843efb2704e675313777,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938589041068221524, guid: 678c67b6156b843efb2704e675313777,
+        type: 3}
+      propertyPath: alarm
+      value: 
+      objectReference: {fileID: 253298982}
+    - target: {fileID: 8938589041068221524, guid: 678c67b6156b843efb2704e675313777,
+        type: 3}
+      propertyPath: pickupPrompt
+      value: 
+      objectReference: {fileID: 42321207}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15371,6 +15434,7 @@ Transform:
   m_PrefabInstance: {fileID: 1994115664}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2008486595 stripped
+
 GameObject:
   m_CorrespondingSourceObject: {fileID: -781498236987261408, guid: 1f9bdfd45785100419da14feea361326,
     type: 3}
@@ -16068,12 +16132,12 @@ SceneRoots:
   - {fileID: 207765669}
   - {fileID: 1907476223}
   - {fileID: 1397350392}
+  - {fileID: 147919650}
+  - {fileID: 1045838884}
   - {fileID: 1079276463}
   - {fileID: 1647020765}
   - {fileID: 682322274}
   - {fileID: 363310194}
-  - {fileID: 284107800}
-  - {fileID: 1213222174}
   - {fileID: 750573310}
   - {fileID: 1643701923}
   - {fileID: 787061133}

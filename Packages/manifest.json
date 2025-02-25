@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.kylewbanks.scenerefattribute": "https://github.com/KyleBanks/scene-ref-attribute.git",
     "com.unity.burst": "1.8.16",
     "com.unity.cinemachine": "2.10.0",
     "com.unity.collab-proxy": "2.6.0",
