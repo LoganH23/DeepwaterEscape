@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using TMPro.Examples;
 using UnityEngine.SceneManagement;
+using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
