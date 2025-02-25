@@ -3,15 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-/*
- * This script creates a visual effect that fades the camera to black. This can
- * usually be used at the end of a scene to transition between scene changes.
- * This script works by creating a texture that is gradually faded in onto the
- * camera.
-*/
 public class CameraFadeOut : MonoBehaviour
 {
-    //variables
     public bool fadeOut = false;
 
     public float speedScale = 1f;
@@ -25,7 +18,6 @@ public class CameraFadeOut : MonoBehaviour
     private int direction = 0;
     private float time = 0f;
 
-    //check if fade out is begun, initialize variables
     private void Start()
     {
         if(startFadedOut)
@@ -42,7 +34,6 @@ public class CameraFadeOut : MonoBehaviour
         texture.Apply();
     }
 
-    //check if fully faded in
     private void Update()
     {
         if(direction == 0 && fadeOut)
@@ -55,9 +46,21 @@ public class CameraFadeOut : MonoBehaviour
             direction = -1;
 
         }
+        /*else if(SceneManager.GetActiveScene().name == "UnderwaterScene")
+        {
+            alpha = 1f;
+            time = 0f;
+            direction = 1;
+        }*/
+        /*else
+        {
+            if (alpha >= 1f) //Fully faded out
+            {
+                GameObject.Find("SceneManager").GetComponent<LoadNextScene>().LoadScene(1);
+            }
+        }*/
     }
 
-    //update texture fade
     public void OnGUI()
     {
         if(alpha > 0f)
