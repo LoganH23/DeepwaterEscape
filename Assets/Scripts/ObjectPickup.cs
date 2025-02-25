@@ -15,12 +15,14 @@ public class ObjectPickup : MonoBehaviour
     [SerializeField] private GameObject pickupPrompt;
     private bool promptOn;
     public AudioSource pickUp;
+    public GameObject alarm;
 
     //initially set prompt to false
     private void Awake()
     {
         pickupPrompt.SetActive(false);
         promptOn = false;
+        alarm.SetActive(false);
     }
 
     private void Update()
@@ -36,6 +38,7 @@ public class ObjectPickup : MonoBehaviour
 
                 if (this.gameObject.name == "Button")
                 {
+                    alarm.SetActive(true);
                     levelManager.GetComponent<TimerAlterDisplay>().timerRunning = true;
                     levelManager.GetComponent<LevelOneManager>().turnOnObjects();
                 }
