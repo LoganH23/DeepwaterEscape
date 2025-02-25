@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/UI/Scenes/Level.unity.meta
 guid: b5617b4beb586464e90094fc5371a5c7
+========
+guid: 63bc5a906d1b8ba469c32ccc2e347126
+folderAsset: yes
+>>>>>>>> Stashed changes:Assets/Rocks/Rock_1.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
