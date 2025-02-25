@@ -1611,6 +1611,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8938589041068221524, guid: 678c67b6156b843efb2704e675313777,
         type: 3}
+      propertyPath: alarm
+      value: 
+      objectReference: {fileID: 253298982}
+    - target: {fileID: 8938589041068221524, guid: 678c67b6156b843efb2704e675313777,
+        type: 3}
       propertyPath: pickupPrompt
       value: 
       objectReference: {fileID: 42321207}
@@ -2204,6 +2209,11 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8938589041068221524, guid: 678c67b6156b843efb2704e675313777,
+        type: 3}
+      propertyPath: alarm
+      value: 
+      objectReference: {fileID: 253298982}
     - target: {fileID: 8938589041068221524, guid: 678c67b6156b843efb2704e675313777,
         type: 3}
       propertyPath: pickupPrompt
@@ -3007,6 +3017,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CollectibleObject (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8938589041068221524, guid: 678c67b6156b843efb2704e675313777,
+        type: 3}
+      propertyPath: alarm
+      value: 
+      objectReference: {fileID: 253298982}
     - target: {fileID: 8938589041068221524, guid: 678c67b6156b843efb2704e675313777,
         type: 3}
       propertyPath: pickupPrompt
