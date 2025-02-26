@@ -12,15 +12,40 @@ public class Bullet : MonoBehaviour
 {
     // The life span of the bullet
     public float BulletlifeSpan = 3;
-
+    public int Damage = 25;
 
     void Awake()
     {
+        // This is to destroy the bullet if the life span end or hit a gameObject
         Destroy(gameObject, BulletlifeSpan);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        // deal damage to enemy tag
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            E_Health enemyHealth = collision.gameObject.GetComponent<E_Health>();
+            if (enemyHealth != null)
+            {
+                enemyHealth.DamageOnEnemy(Damage);
+            }
+        }
+
+        Destroy(gameObject);
+
+        // deal damage to Boss tag
+
+        if (collision.gameObject.CompareTag("Boss"))
+        {
+            Boss_health Bh = collision.gameObject.GetComponent<Boss_health>();
+            if (Bh != null)
+            {
+                Bh.DamageOnEnemy(Damage);
+            }
+        }
+
         Destroy(gameObject);
     }
 }
