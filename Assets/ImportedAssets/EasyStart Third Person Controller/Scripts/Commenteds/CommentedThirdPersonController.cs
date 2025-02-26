@@ -57,7 +57,7 @@ public class CommentedThirdPersonController : MonoBehaviour
     // Update is only being used here to identify keys and trigger animations
     void Update()
     {
-
+        
         // Check which input is being pressed
         // Read the end of this script for a detailed explanation.
         inputHorizontal = Input.GetAxis("Horizontal");
@@ -127,6 +127,8 @@ public class CommentedThirdPersonController : MonoBehaviour
         // Check if input jump is pressed and if player is in the ground
         if ( inputJump && cc.isGrounded )
         {
+            Debug.Log("Jumping");
+
             isJumping = true;
             // Disable crounching when jumping? You decide, just uncomment:
             // isCrouching = false;
@@ -141,7 +143,7 @@ public class CommentedThirdPersonController : MonoBehaviour
     // With the inputs and animations defined, FixedUpdate is responsible for applying movements and actions to the player
     private void FixedUpdate()
     {
-
+        
         // Checks if the player is sprinting, because if he is, it will add a speed boost to his movement
         float velocityAdittion = 0;
         if ( isSprinting )

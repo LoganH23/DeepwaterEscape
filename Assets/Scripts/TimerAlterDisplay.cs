@@ -4,26 +4,19 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-/*
- * This script handles the countdown timer used in level 1. It tracks the time
- * remaining and displays it to the UI.
-*/
 public class TimerAlterDisplay : MonoBehaviour
 {
-    [Tooltip("Time limit in seconds.")]
     public float timeLimit = 10f;
-    private float curTimeRemaining; // Internal counter for time remaining
-    [Tooltip("When is the timer going to end?")]
+    private float curTimeRemaining;
     public float endTime = 0f;
-    public bool timerRunning = false; // Is the timer actually ticking? Must be triggered from an object.
-    // private bool isVisible = true; // Unused as of now.
-    public TextMeshProUGUI timerText; // The textmeshpro object that will hold the timer text
+    public bool timerRunning = false;
+    public TextMeshProUGUI timerText;
 
     // Start is called before the first frame update
     void Start()
     {
-        timerRunning = false; // Timer has to be triggered manually in-game
-        curTimeRemaining = timeLimit; // Update internal counter to match max time limit
+        timerRunning = false;
+        curTimeRemaining = timeLimit;
     }
     // Update is called once per frame
     void Update()
@@ -37,10 +30,10 @@ public class TimerAlterDisplay : MonoBehaviour
             }
             else
             {
-                timerRunning = false; // timer doesn't run when it's out
+                timerRunning = false;
                 curTimeRemaining = 0;
                 timerText.text = string.Format("00:00");
-                SceneManager.LoadScene("Scene_SubTimeout"); // Send them to gameover screen
+                SceneManager.LoadScene("Scene_SubTimeout");
             }
         }
     }
@@ -49,6 +42,6 @@ public class TimerAlterDisplay : MonoBehaviour
         timeToDisplay += 1;
         float minutes = Mathf.FloorToInt(timeToDisplay / 60); //2
         float seconds = Mathf.FloorToInt(timeToDisplay % 60); //10
-        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds); // Format timer text to be good.
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }

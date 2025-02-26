@@ -28,7 +28,9 @@ Material:
     m_Ints: []
     m_Floats:
     - _QueueControl: 0
-    - _RippleSpeed: 10
+    - _RippleSpeed: 0.5
+    - _WaveSpeed: 0.5
+    - _Waviness: 0.1
     m_Colors:
     - _BaseColor: {r: 0.08098966, g: 0.24776323, b: 0.49056602, a: 1}
     - _RippleColor: {r: 0.46751517, g: 0.59926397, b: 0.9622642, a: 0}
