@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class E_Health : MonoBehaviour
+public class Boss_health : MonoBehaviour
 {
-    public int EnemyHealth = 100;
-    public int EnemyDmg = 25;
+    public int BossHealth = 100;
+    public int BossDmg = 25;
+    private int currentHealth;
 
-    [SerializeField] private Animator EnColl = null;
-
+    [SerializeField]
     private string sceneToLoad;
 
     public TextMeshProUGUI Healtext;
@@ -19,22 +19,24 @@ public class E_Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        currentHealth = BossHealth;
+        UpdateText();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public void DamageOnEnemy(int damage)
     {
-        EnemyHealth -= damage;
-        if (EnemyHealth <= 0)
+        BossHealth -= damage;
+        UpdateText();
+        if (BossHealth <= 0)
         {
             defeat();
-            // SceneManager.LoadScene(sceneToLoad);
+            SceneManager.LoadScene(sceneToLoad);
         }
     }
 
@@ -50,9 +52,17 @@ public class E_Health : MonoBehaviour
             Player_Health playerHealth = other.GetComponent<Player_Health>();
             if (playerHealth != null)
             {
-                playerHealth.TakeDamage(EnemyDmg);
-
+                playerHealth.TakeDamage(BossDmg);
             }
         }
     }
+
+    void UpdateText()
+    {
+        if (Healtext != null)
+        {
+            Healtext.text = "Boss " + BossHealth + " / " + currentHealth;
+        }
+    }
 }
+
