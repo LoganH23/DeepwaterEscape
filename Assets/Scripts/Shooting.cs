@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/*
+ * This script handles the shooting mechanic used for the gun prefab.
+ * On a mouse click, it spawns a bullet and gives it a forward velocity based
+ * on a user-set speed. The gun has a cooldown time between which bullets
+ * cannot be shot
+*/
+
 public class Shooting : MonoBehaviour
 {
     // Gun shoot and speed
