@@ -15,27 +15,33 @@ public class ObjectPickup : MonoBehaviour
     [SerializeField] private GameObject pickupPrompt;
     private bool promptOn;
     public AudioSource pickUp;
+    public GameObject alarm;
 
     //initially set prompt to false
-    private void Awake()
+    private void Start()
     {
         pickupPrompt.SetActive(false);
         promptOn = false;
+        //alarm.SetActive(false);
     }
 
     private void Update()
     {
         if(promptOn == true && Input.GetKeyDown(KeyCode.E))
         {
+            alarm.SetActive(true);
+
             //check if level 1
-            if(SceneManager.GetActiveScene().name == "1.Submarine")
+            if (SceneManager.GetActiveScene().name == "1.Submarine")
             {
                 //set items in level manager
 
                 GameObject levelManager = GameObject.Find("LevelManager");
 
-                if (this.gameObject.name == "Button")
+                if (this.gameObject.tag == "Button")
                 {
+                    alarm.SetActive(true);
+
                     levelManager.GetComponent<TimerAlterDisplay>().timerRunning = true;
                     levelManager.GetComponent<LevelOneManager>().turnOnObjects();
                 }

@@ -1,41 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro; // Ensure this is included
 
 public class ScreenModeSetting : MonoBehaviour
 {
-    [SerializeField] private TMPro.TMP_Dropdown ScreenModeDropDown;    //check name!
+    [SerializeField] private TMP_Dropdown ScreenModeDropDown; // Ensure this is assigned in the Inspector
     private Resolutions resolutions;
-    // Start is called before the first frame update
+
     void Start()
     {
         resolutions = FindObjectOfType<Resolutions>();
-        int val = PlayerPrefs.GetInt("ScreenMode");    //check name!
-        ScreenModeDropDown.value = val;    //check name!
+        if (resolutions == null)
+        {
+            Debug.LogError("Resolutions script not found in the scene!");
+            return;
+        }
+
+        if (ScreenModeDropDown == null)
+        {
+            Debug.LogError("ScreenModeDropDown is not assigned!");
+            return;
+        }
+
+        int val = PlayerPrefs.GetInt("ScreenMode", 0); // Default to FullScreenWindow
+        ScreenModeDropDown.value = val;
+        ScreenModeDropDown.RefreshShownValue();
     }
 
-    public void SetScreenMode(int index)    //check name!
+    public void SetScreenMode(int index)
     {
-        PlayerPrefs.SetInt("ScreenMode", index);    //check name!
-        if (index == 0)
+        if (resolutions == null)
         {
-            // Switch to 4k full
-            Screen.SetResolution(resolutions.resolution.width, resolutions.resolution.height, true);
+            Debug.LogError("Resolutions script not found! Cannot change screen mode.");
+            return;
+        }
 
-            //Screen.fullScreen = true;
-            Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
-        }
-        if (index == 1)
-        {
-            Screen.SetResolution(resolutions.resolution.width, resolutions.resolution.height, true);
-            //Screen.fullScreen = true;
-            Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
-        }
-        if (index == 2)
-        {
-            Screen.SetResolution(resolutions.resolution.width, resolutions.resolution.height, false);
-            //Screen.fullScreen = false;
-            Screen.fullScreenMode = FullScreenMode.Windowed;
-        }
+        PlayerPrefs.SetInt("ScreenMode", index);
+        PlayerPrefs.Save();
+
+        FullScreenMode mode = (FullScreenMode)index;
+        Screen.fullScreenMode = mode;
+        Screen.SetResolution(resolutions.resolution.width, resolutions.resolution.height, mode != FullScreenMode.Windowed);
+
+        Debug.Log($"Screen mode set to: {mode}, Resolution: {resolutions.resolution.width} x {resolutions.resolution.height}");
     }
 }
