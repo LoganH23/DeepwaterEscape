@@ -28,14 +28,17 @@ public class Shooting : MonoBehaviour
     public TextMeshProUGUI Ammotext;
 
     // camera Zoom
-    // public Camera playerC;
-    // public float zoom = 10f;
-    // private float normalZoom;
+    public Camera playerC;
+    public float zoom = 10f;
+    private float normalZoom;
+    private float duration = 1f;
+    private float lerp = 0f;
+
 
     void Start()
     {
         currentAmmo = maxAmmo;
-        // normalZoom = playerC.fieldOfView;
+        normalZoom = playerC.fieldOfView;
 
         updateText();
     }
@@ -63,15 +66,16 @@ public class Shooting : MonoBehaviour
         }
 
         // The Right mouse to zoom the camera
-        // if (Input.GetMouseButtonDown(1))
-        // {
-        //    playerC.fieldOfView = zoom;
-        // }
-
-        //else if (Input.GetMouseButtonUp(1))
-        //{
-        //    playerC.fieldOfView = normalZoom;
-        //}
+        if (Input.GetMouseButton(1))
+        {
+            lerp += Time.deltaTime / duration;
+            playerC.fieldOfView = Mathf.Lerp(playerC.fieldOfView, zoom, lerp);
+        }
+        else if (Input.GetMouseButtonUp(1))
+        {
+            lerp += Time.deltaTime / duration;
+            playerC.fieldOfView = Mathf.Lerp(playerC.fieldOfView, normalZoom, lerp);
+        }
 
     }
 

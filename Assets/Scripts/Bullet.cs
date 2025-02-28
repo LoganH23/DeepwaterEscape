@@ -24,28 +24,32 @@ public class Bullet : MonoBehaviour
     {
         // deal damage to enemy tag
 
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.tag == "Enemy")
         {
             E_Health enemyHealth = collision.gameObject.GetComponent<E_Health>();
             if (enemyHealth != null)
             {
                 enemyHealth.DamageOnEnemy(Damage);
             }
+
+            Destroy(gameObject);
         }
 
-        Destroy(gameObject);
+        
 
         // deal damage to Boss tag
 
-        if (collision.gameObject.CompareTag("Boss"))
+        if (collision.gameObject.tag == "Boss")
         {
             Boss_health Bh = collision.gameObject.GetComponent<Boss_health>();
             if (Bh != null)
             {
                 Bh.DamageOnEnemy(Damage);
             }
+
+            Destroy(gameObject);
         }
 
-        Destroy(gameObject);
+        
     }
 }
