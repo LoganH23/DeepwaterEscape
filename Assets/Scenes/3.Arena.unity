@@ -131,7 +131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 45651015}
-  - component: {fileID: 45651014}
+  - component: {fileID: 45651016}
   m_Layer: 0
   m_Name: BossManager
   m_TagString: Untagged
@@ -139,18 +139,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &45651014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 45651013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc3f0aa97f102449a9e2a3fc30da43e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &45651015
 Transform:
   m_ObjectHideFlags: 0
@@ -166,6 +154,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &45651016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45651013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7d7d6edf0d8c4a42bc73ca0e1a70672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  biteSystem: {fileID: 336201770}
+  enemy: {fileID: 1476229171}
+  attackQueue: 0000000000000000000000000000000000000000
 --- !u!1 &55285993
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,6 +710,18 @@ MonoBehaviour:
   isChargeNode: 0
   isChargeEndNode: 1
   NodeIndex: 0
+--- !u!114 &522186752 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7846631107063035249, guid: 31ebf4efd7fdb45cfbc95fa8c8c51749,
+    type: 3}
+  m_PrefabInstance: {fileID: 2032452654}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &663992027
 GameObject:
   m_ObjectHideFlags: 0
@@ -2371,6 +2386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6884f7fd457b4414b9d5c8965eda43e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  whiteImage: {fileID: 522186752}
 --- !u!1 &1558282594
 GameObject:
   m_ObjectHideFlags: 0
