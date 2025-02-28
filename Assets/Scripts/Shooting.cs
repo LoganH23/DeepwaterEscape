@@ -31,7 +31,7 @@ public class Shooting : MonoBehaviour
     public Camera playerC;
     public float zoom = 10f;
     private float normalZoom;
-    private float duration = 1f;
+    private float duration = 0.5f;
     private float lerp = 0f;
 
 
@@ -68,11 +68,16 @@ public class Shooting : MonoBehaviour
         // The Right mouse to zoom the camera
         if (Input.GetMouseButton(1))
         {
+            lerp = 0f;
+
+
             lerp += Time.deltaTime / duration;
             playerC.fieldOfView = Mathf.Lerp(playerC.fieldOfView, zoom, lerp);
         }
-        else if (Input.GetMouseButtonUp(1))
+        else
         {
+            lerp = 0f;
+
             lerp += Time.deltaTime / duration;
             playerC.fieldOfView = Mathf.Lerp(playerC.fieldOfView, normalZoom, lerp);
         }
