@@ -6,7 +6,7 @@ public class FlashBang_V1 : MonoBehaviour
 {
     // The screen go white
     private float fuseTime = 4f; // Time when the bome blow
-    private Image whiteImage;
+    public Image whiteImage;
     private Camera cam;
 
     // this is the glowing affect material
@@ -19,8 +19,8 @@ public class FlashBang_V1 : MonoBehaviour
     private void Start()
     {
         // This it to find the wight image in the hierachy also in need to be tag by WhiteImage
-        whiteImage = GameObject.FindGameObjectWithTag("WhiteImage").GetComponent<Image>();
-        
+        //whiteImage = GameObject.FindGameObjectWithTag("WhiteImage").GetComponent<Image>();
+
         if (whiteImage == null)
         {
             // if the image is not found
@@ -62,6 +62,12 @@ public class FlashBang_V1 : MonoBehaviour
         }
 
 
+
+    }
+
+
+    public void startFlashbang()
+    {
         StartCoroutine(GlowEffect());
 
 
@@ -73,12 +79,11 @@ public class FlashBang_V1 : MonoBehaviour
         Invoke(nameof(Explode), fuseTime);
     }
 
-
     // to show the explosion and to determen that it was seen or not
     private void Explode()
     {
         // it for it to stop glowing
-        isGlowing = false; 
+        isGlowing = false;
 
         // check if the camera is looking at the object
         if (CheckVisibility())
