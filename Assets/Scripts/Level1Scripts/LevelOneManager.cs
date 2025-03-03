@@ -27,6 +27,8 @@ public class LevelOneManager : MonoBehaviour
 
     public void turnOnObjects()
     {
+        GetComponent<ChangeWaves>().updateMats();
+
         item1.SetActive(true);
         item2.SetActive(true);
         item3.SetActive(true);
