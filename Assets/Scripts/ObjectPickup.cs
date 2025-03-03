@@ -17,6 +17,8 @@ public class ObjectPickup : MonoBehaviour
     public AudioSource pickUp;
     public GameObject alarm;
 
+    [SerializeField] private TextAsset inkJson;
+
     //initially set prompt to false
     private void Start()
     {
@@ -42,8 +44,9 @@ public class ObjectPickup : MonoBehaviour
                 {
                     alarm.SetActive(true);
 
-                    levelManager.GetComponent<TimerAlterDisplay>().timerRunning = true;
-                    levelManager.GetComponent<LevelOneManager>().turnOnObjects();
+                    //levelManager.GetComponent<TimerAlterDisplay>().timerRunning = true;
+                    StartCoroutine(countdownDialogue());
+                    //levelManager.GetComponent<LevelOneManager>().turnOnObjects();
                 }
                 else
                 {
@@ -60,6 +63,8 @@ public class ObjectPickup : MonoBehaviour
                     {
                         levelManager.GetComponent<LevelOneManager>().setItem3();
                     }
+
+                    Destroy(this.gameObject, 1);
                 }
                 
             }
@@ -68,7 +73,6 @@ public class ObjectPickup : MonoBehaviour
             promptOn = false;
             pickupPrompt.SetActive(false);
             GetComponent<Renderer>().enabled = false;
-            Destroy(this.gameObject, 1);
         }
     }
 
@@ -90,5 +94,21 @@ public class ObjectPickup : MonoBehaviour
             promptOn = false;
         }
 
+    }
+
+    IEnumerator countdownDialogue()
+    {
+        GameObject levelManager = GameObject.Find("LevelManager");
+
+        yield return new WaitForSeconds(1);
+        DialogueManager.GetInstance().EnterDialogueMode(inkJson);
+
+        while(!DialogueManager.GetInstance().dialogueComplete)
+        {
+            continue;
+        }
+        levelManager.GetComponent<TimerAlterDisplay>().timerRunning = true;
+        levelManager.GetComponent<LevelOneManager>().turnOnObjects();
+        Destroy(this.gameObject, 1);
     }
 }

@@ -1,0 +1,10 @@
+What the heck!?
+Everything is shutting down! This is bad...
+Wait, I'm getting a message...
+"THIS IS A CRTICAL MESSAGE."
+"WE KNOW YOU HAVE COLLECTED THE PANACEA, AND WE WILL NOT LET YOU RETURN TO THE SURFACE."
+"THIS CURE WILL NOT BE ACCEPTED BY THE GOVERNMENT."
+"THE SUBMARINE HAS BEEN PROGRAMMED TO EXPLODE ONE MINUTE AFTER THIS MESSAGE CONCLUDES."
+"MAY YOU GO EASY INTO THE ABYSS."
+This is bad!
+I need to collect my stuff, grab my gun and blast that door open!
