@@ -7,6 +7,8 @@ TagManager:
   - CinemachineTarget
   - Bullet
   - Button
+  - Boss
+  - PauseMenuUI
   layers:
   - Default
   - TransparentFX
@@ -14,11 +16,11 @@ TagManager:
   - 
   - Water
   - UI
+  - Post Processing
   - 
   - 
   - 
-  - 
-  - 
+  - Player
   - 
   - 
   - 
