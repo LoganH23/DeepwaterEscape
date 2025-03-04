@@ -19,6 +19,6 @@ public class Level3NextLevelTrigger : MonoBehaviour
     {
         mainCamera.GetComponent<CameraFadeOut>().fadeOut = true;
         yield return new WaitForSeconds(6);
-        SceneManager.LoadScene("3.Arena");
+        SceneManager.LoadScene("4.Arena");
     }
 }
