@@ -13,7 +13,7 @@ using UnityEngine;
 /// Make sure that the object that will receive this script (the player) 
 /// has the Player tag and the Character Controller component.
 /// </summary>
-public class ThirdPersonController : MonoBehaviour
+public class FirstPersonController : MonoBehaviour
 {
 
     [Tooltip("Speed ​​at which the character moves. It is not affected by gravity or jumping.")]
