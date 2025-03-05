@@ -14,7 +14,6 @@ public class Clam_Walker : MonoBehaviour
     public NavMeshAgent clamNavAgent;
     public Transform navTarget;
 
-
     // Update is called once per frame
     void Update()
     {
