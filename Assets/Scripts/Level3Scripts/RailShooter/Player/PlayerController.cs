@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField, Self] private InputReader input;
+    //[SerializeField, Self] private InputReader input;
 
     [Tooltip("The target spline path which the object will move along")]
     public Transform followTarget;
@@ -36,7 +36,15 @@ public class PlayerController : MonoBehaviour
     {
         // Calculate target position based on follow distance and target's position
         targetPos = followTarget.position + (followTarget.forward * -followDistance);
+        transform.SetPositionAndRotation(targetPos, followTarget.rotation);
 
+        /*
+        localPos.z += input.GetMove.x * movementSpeed * Time.deltaTime;
+        localPos.y += input.GetMove.y * movementSpeed * Time.deltaTime;
+
+        transform.SetPositionAndRotation(new Vector3(targetPos.x, localPos.y, localPos.z), followTarget.rotation);
+        */
+        /*
         // Apply smooth damp to the players position
         smoothedPos = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, smoothTime);
 
@@ -56,5 +64,6 @@ public class PlayerController : MonoBehaviour
         // Match the roll based on player input
         roll = Mathf.Lerp(roll, maxRoll * input.GetMove.x, rollSpeed * Time.deltaTime);
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, roll);
+        */
     }
 }
