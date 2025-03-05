@@ -5,20 +5,30 @@ using UnityEngine.SceneManagement;
 
 public class FallQuit : MonoBehaviour
 {
+
+    [SerializeField] GameObject mainCamera;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    void OnCollisionEnter(object collisionObject)
+    private void OnTriggerEnter(Collider other)
     {
+        StartCoroutine(fallTransition());
+    }
+
+    IEnumerator fallTransition()
+    {
+        mainCamera.GetComponent<CameraFadeOut>().fadeOut = true;
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene("2.Oceanfloor");
     }
 }

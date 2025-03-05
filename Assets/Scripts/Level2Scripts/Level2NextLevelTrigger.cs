@@ -20,7 +20,7 @@ public class Level2NextLevelTrigger : MonoBehaviour
     IEnumerator fadeToNextScene()
     {
         mainCamera.GetComponent<CameraFadeOut>().fadeOut = true;
-        yield return new WaitForSeconds(6);
-        SceneManager.LoadScene("Scene_OnRails");
+        yield return new WaitForSeconds(4);
+        SceneManager.LoadScene("3.OnRails");
     }
 }
