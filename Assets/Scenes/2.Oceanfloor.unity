@@ -15203,7 +15203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5288902756808610438, guid: fec50b6ad367d2b40a17f7304187c5bc,
         type: 3}
-      propertyPath: navTarget
+      propertyPath: playerPos
       value: 
       objectReference: {fileID: 934813073}
     m_RemovedComponents: []
