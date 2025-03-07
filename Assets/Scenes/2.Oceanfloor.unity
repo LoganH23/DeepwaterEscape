@@ -7731,8 +7731,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1834859907}
   m_LocalEulerAnglesHint: {x: 0, y: 158.526, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!65 &880567300
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7800,7 +7798,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> 412b264 (Misc. Tweaks)
 --- !u!1 &883175311
 GameObject:
   m_ObjectHideFlags: 0
