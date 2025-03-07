@@ -15,6 +15,7 @@ public class OnRailsPlayerFollow : MonoBehaviour
     void Start()
     {
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         playerModel = transform;
     }
 
