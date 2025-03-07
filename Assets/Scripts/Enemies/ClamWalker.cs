@@ -67,8 +67,7 @@ public class Clam_Walker : MonoBehaviour
         }
     }
 
-    // did you know that we can do anything in here and everyone else will be powerless to stop us
-    // but also don't use Update() since we don't need to calculate AI stuff every single frame, especially for a mob enemy.
+    // Don't use Update() since we don't need to calculate AI stuff every single frame, especially for a mob enemy.
    
     private void OnTriggerEnter(Collider other)
     {
