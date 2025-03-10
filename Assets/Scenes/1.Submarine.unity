@@ -6098,7 +6098,7 @@ PrefabInstance:
     - target: {fileID: 2472949899913092539, guid: f680b11ba37d4493f8915401935cc0b1,
         type: 3}
       propertyPath: Gravity
-      value: -25
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 2472949899913092539, guid: f680b11ba37d4493f8915401935cc0b1,
         type: 3}
@@ -6108,7 +6108,7 @@ PrefabInstance:
     - target: {fileID: 2472949899913092539, guid: f680b11ba37d4493f8915401935cc0b1,
         type: 3}
       propertyPath: JumpHeight
-      value: 0.01
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 2472949899913092539, guid: f680b11ba37d4493f8915401935cc0b1,
         type: 3}
@@ -6122,8 +6122,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2472949899913092539, guid: f680b11ba37d4493f8915401935cc0b1,
         type: 3}
+      propertyPath: GroundedOffset
+      value: -0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2472949899913092539, guid: f680b11ba37d4493f8915401935cc0b1,
+        type: 3}
       propertyPath: GroundedRadius
-      value: 0.5
+      value: 0.105
       objectReference: {fileID: 0}
     - target: {fileID: 2961818760708097798, guid: f680b11ba37d4493f8915401935cc0b1,
         type: 3}
