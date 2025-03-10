@@ -16,6 +16,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
 
+
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
 
@@ -66,6 +67,7 @@ public class DialogueManager : MonoBehaviour
     {
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
+        dialogueComplete = false;
         dialoguePanel.SetActive(true);
 
         ContinueStory();
