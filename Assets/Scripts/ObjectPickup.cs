@@ -16,6 +16,7 @@ public class ObjectPickup : MonoBehaviour
     private bool promptOn;
     public AudioSource pickUp;
     public GameObject alarm;
+    private bool alarmStart = false;
 
     [SerializeField] private TextAsset inkJson;
 
@@ -31,7 +32,7 @@ public class ObjectPickup : MonoBehaviour
     {
         if(promptOn == true && Input.GetKeyDown(KeyCode.E))
         {
-            alarm.SetActive(true);
+            
 
             //check if level 1
             if (SceneManager.GetActiveScene().name == "1.Submarine")
@@ -43,9 +44,11 @@ public class ObjectPickup : MonoBehaviour
                 if (this.gameObject.tag == "Button")
                 {
                     alarm.SetActive(true);
-
+                    alarmStart = true;
+                    DialogueManager.GetInstance().EnterDialogueMode(inkJson);
+                    levelManager.GetComponent<ChangeWaves>().updateMats();
                     //levelManager.GetComponent<TimerAlterDisplay>().timerRunning = true;
-                    StartCoroutine(countdownDialogue());
+                    //StartCoroutine(countdownDialogue());
                     //levelManager.GetComponent<LevelOneManager>().turnOnObjects();
                 }
                 else
@@ -73,6 +76,15 @@ public class ObjectPickup : MonoBehaviour
             promptOn = false;
             pickupPrompt.SetActive(false);
             GetComponent<Renderer>().enabled = false;
+        }
+
+        //if in level 1 and dialogue for the button is complete
+        if(SceneManager.GetActiveScene().name == "1.Submarine" && alarmStart && DialogueManager.GetInstance().dialogueComplete)
+        {
+            GameObject levelManager = GameObject.Find("LevelManager");
+            levelManager.GetComponent<LevelOneManager>().turnOnObjects();
+            levelManager.GetComponent<TimerAlterDisplay>().timerRunning = true;
+            Destroy(this.gameObject, 1);
         }
     }
 
@@ -103,12 +115,12 @@ public class ObjectPickup : MonoBehaviour
         yield return new WaitForSeconds(1);
         DialogueManager.GetInstance().EnterDialogueMode(inkJson);
 
-        while(!DialogueManager.GetInstance().dialogueComplete)
+        /*while(!DialogueManager.GetInstance().dialogueComplete)
         {
             continue;
-        }
-        levelManager.GetComponent<TimerAlterDisplay>().timerRunning = true;
-        levelManager.GetComponent<LevelOneManager>().turnOnObjects();
-        Destroy(this.gameObject, 1);
+        }*/
+        //levelManager.GetComponent<TimerAlterDisplay>().timerRunning = true;
+        //levelManager.GetComponent<LevelOneManager>().turnOnObjects();
+        //Destroy(this.gameObject, 1);
     }
 }
