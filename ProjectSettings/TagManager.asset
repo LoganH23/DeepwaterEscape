@@ -9,6 +9,7 @@ TagManager:
   - Button
   - Boss
   - PauseMenuUI
+  - Debris
   layers:
   - Default
   - TransparentFX

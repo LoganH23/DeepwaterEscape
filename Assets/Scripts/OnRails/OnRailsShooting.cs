@@ -20,7 +20,7 @@ public class OnRailsShooting : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            GameObject bulletInst = Instantiate(bullet, new Vector3(bulletSpawn.position.x, bulletSpawn.position.y + 1, bulletSpawn.position.z), bulletSpawn.rotation);
+            GameObject bulletInst = Instantiate(bullet, new Vector3(bulletSpawn.position.x, bulletSpawn.position.y + 2, bulletSpawn.position.z), bulletSpawn.rotation);
             bulletInst.GetComponent<Rigidbody>().AddForce(bulletSpawn.forward * bulletSpeed, ForceMode.Impulse);
             
         }
