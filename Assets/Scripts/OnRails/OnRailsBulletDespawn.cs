@@ -16,6 +16,15 @@ public class OnRailsBulletDespawn : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Debris"))
+        {
+            Destroy(other.gameObject);
+            Destroy(this.gameObject);
+        }
+    }
+
     IEnumerator destroyBullet()
     {
         yield return new WaitForSeconds(5);
