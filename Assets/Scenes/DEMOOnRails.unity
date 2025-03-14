@@ -3122,8 +3122,8 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 1
   m_Method: 0
-  m_Duration: 200
-  m_MaxSpeed: 10.086135
+  m_Duration: 100
+  m_MaxSpeed: 20.17227
   m_EasingMode: 0
   m_AlignmentMode: 1
   m_ObjectForwardAxis: 2
@@ -6853,7 +6853,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3d55a98d3506ff1468a5d7f35de33b06,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -28.2
+      value: -32.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d55a98d3506ff1468a5d7f35de33b06,
         type: 3}
