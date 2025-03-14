@@ -92,7 +92,9 @@ namespace StarterAssets
 			if (_mainCamera == null)
 			{
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
-			}
+                Cursor.lockState = CursorLockMode.Locked; //Lock the cursor again
+                Cursor.visible = false; // Makes the cursor invisible
+            }
 		}
 
 		private void Start()
@@ -112,11 +114,25 @@ namespace StarterAssets
 
 		private void Update()
 		{
+			if (DialogueManager.GetInstance().dialogueIsPlaying)
+			{
+				return;
+			}
+
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
-		}
+        }
 
+
+		//      private void FixedUpdate()
+		//      {
+		//          if (DialogueManager.GetInstance().dialogueIsPlaying)
+		//          {
+		//              return;
+		//          }
+
+		//}
 		private void LateUpdate()
 		{
 			CameraRotation();
@@ -214,6 +230,8 @@ namespace StarterAssets
 				// Jump
 				if (_input.jump && _jumpTimeoutDelta <= 0.0f)
 				{
+					Debug.Log("Jumping");
+
 					// the square root of H * -2 * G = how much velocity needed to reach desired height
 					_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
 				}
@@ -264,5 +282,12 @@ namespace StarterAssets
 			// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
 		}
+
+		//public void SetMovement(bool canMove)
+		//{
+		//	enabled = canMove;
+		//}
+
 	}
+
 }

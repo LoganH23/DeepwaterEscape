@@ -15,29 +15,41 @@ public class ObjectPickup : MonoBehaviour
     [SerializeField] private GameObject pickupPrompt;
     private bool promptOn;
     public AudioSource pickUp;
+    public GameObject alarm;
+    private bool alarmStart = false;
+
+    [SerializeField] private TextAsset inkJson;
 
     //initially set prompt to false
-    private void Awake()
+    private void Start()
     {
         pickupPrompt.SetActive(false);
         promptOn = false;
+        //alarm.SetActive(false);
     }
 
     private void Update()
     {
         if(promptOn == true && Input.GetKeyDown(KeyCode.E))
         {
+            
+
             //check if level 1
-            if(SceneManager.GetActiveScene().name == "1.Submarine")
+            if (SceneManager.GetActiveScene().name == "1.Submarine")
             {
                 //set items in level manager
 
                 GameObject levelManager = GameObject.Find("LevelManager");
 
-                if (this.gameObject.name == "Button")
+                if (this.gameObject.tag == "Button")
                 {
-                    levelManager.GetComponent<TimerAlterDisplay>().timerRunning = true;
-                    levelManager.GetComponent<LevelOneManager>().turnOnObjects();
+                    alarm.SetActive(true);
+                    alarmStart = true;
+                    DialogueManager.GetInstance().EnterDialogueMode(inkJson);
+                    levelManager.GetComponent<ChangeWaves>().updateMats();
+                    //levelManager.GetComponent<TimerAlterDisplay>().timerRunning = true;
+                    //StartCoroutine(countdownDialogue());
+                    //levelManager.GetComponent<LevelOneManager>().turnOnObjects();
                 }
                 else
                 {
@@ -54,6 +66,8 @@ public class ObjectPickup : MonoBehaviour
                     {
                         levelManager.GetComponent<LevelOneManager>().setItem3();
                     }
+
+                    Destroy(this.gameObject, 1);
                 }
                 
             }
@@ -62,6 +76,14 @@ public class ObjectPickup : MonoBehaviour
             promptOn = false;
             pickupPrompt.SetActive(false);
             GetComponent<Renderer>().enabled = false;
+        }
+
+        //if in level 1 and dialogue for the button is complete
+        if(SceneManager.GetActiveScene().name == "1.Submarine" && alarmStart && DialogueManager.GetInstance().dialogueComplete)
+        {
+            GameObject levelManager = GameObject.Find("LevelManager");
+            levelManager.GetComponent<LevelOneManager>().turnOnObjects();
+            levelManager.GetComponent<TimerAlterDisplay>().timerRunning = true;
             Destroy(this.gameObject, 1);
         }
     }
@@ -84,5 +106,21 @@ public class ObjectPickup : MonoBehaviour
             promptOn = false;
         }
 
+    }
+
+    IEnumerator countdownDialogue()
+    {
+        GameObject levelManager = GameObject.Find("LevelManager");
+
+        yield return new WaitForSeconds(1);
+        DialogueManager.GetInstance().EnterDialogueMode(inkJson);
+
+        /*while(!DialogueManager.GetInstance().dialogueComplete)
+        {
+            continue;
+        }*/
+        //levelManager.GetComponent<TimerAlterDisplay>().timerRunning = true;
+        //levelManager.GetComponent<LevelOneManager>().turnOnObjects();
+        //Destroy(this.gameObject, 1);
     }
 }

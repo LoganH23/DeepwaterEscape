@@ -21,6 +21,8 @@ public class PauseMenu : MonoBehaviour
     public void PauseGame()
     {
         pauseMenuUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.None; // Unlock the cursor so that buttons can be clicked
+        Cursor.visible = true; // Makes the cursor visible
         Time.timeScale = 0f; // Freeze the game
         isPaused = true;
     }
@@ -29,6 +31,8 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f; // Unfreeze the game
+        Cursor.lockState = CursorLockMode.Locked; //Lock the cursor
+        Cursor.visible = false; // Makes the cursor invisible
         isPaused = false;
     }
 
